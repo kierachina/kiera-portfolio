@@ -679,6 +679,10 @@ a {
   gap: 0.8rem;
 }
 
+.case-gallery-followup {
+  margin-top: 1rem;
+}
+
 .case-gallery figure {
   min-width: 0;
   margin: 0;
@@ -754,6 +758,20 @@ a {
 .case-gallery.gallery-posters img,
 .case-gallery.gallery-posters figure:first-child img {
   height: 380px;
+  object-fit: contain;
+  object-position: center;
+  background: #f6f1e9;
+}
+
+.case-gallery.gallery-shopping-bag figure:first-child img {
+  height: 420px;
+  object-fit: contain;
+  object-position: center;
+  background: #f6f1e9;
+}
+
+.case-gallery.gallery-shopping-bag figure:not(:first-child) img {
+  height: 560px;
   object-fit: contain;
   object-position: center;
   background: #f6f1e9;
@@ -921,6 +939,50 @@ a {
   margin-top: 2.5rem;
 }
 
+.product-gallery-heading {
+  margin-top: 3rem;
+}
+
+.retail-gallery-heading {
+  margin-top: 3rem;
+}
+
+.case-gallery.gallery-retail-visual {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-gallery.gallery-retail-visual img {
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.case-gallery.gallery-retail-visual figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.case-gallery.gallery-retail-visual figure:first-child img {
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.case-gallery.gallery-product-photography {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.case-gallery.gallery-product-photography figure:first-child {
+  grid-column: auto;
+}
+
+.case-gallery.gallery-product-photography img,
+.case-gallery.gallery-product-photography figure:first-child img {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
 .event-metrics {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -981,6 +1043,10 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
+}
+
+.detail-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .detail-card {
@@ -1120,6 +1186,18 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .case-gallery.gallery-posters.gallery-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-gallery.gallery-product-photography {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-gallery.gallery-retail-visual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .detail-grid {
     grid-template-columns: 1fr;
   }
@@ -1130,6 +1208,27 @@ a {
 }
 
 @media (max-width: 520px) {
+  .case-gallery.gallery-posters.gallery-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery.gallery-product-photography {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery.gallery-retail-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery.gallery-retail-visual figure:first-child {
+    grid-column: auto;
+  }
+
+  .case-gallery.gallery-retail-visual img,
+  .case-gallery.gallery-retail-visual figure:first-child img {
+    height: 260px;
+  }
+
   .hero h1 {
     font-size: 2.45rem;
   }
@@ -1189,6 +1288,13 @@ a {
   .case-gallery.gallery-posters img,
   .case-gallery.gallery-posters figure:first-child img {
     height: 460px;
+  }
+
+  .case-gallery.gallery-shopping-bag figure:first-child img,
+  .case-gallery.gallery-shopping-bag figure:not(:first-child) img {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
   }
 
   .event-metrics {
