@@ -293,6 +293,17 @@ a {
   font-size: 1.05rem;
 }
 
+.about-map-wrap {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f8f4ec;
+}
+
+.about-map {
+  width: 100%;
+  height: auto;
+}
+
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -1168,6 +1179,10 @@ a {
   .resume-grid,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .about-layout {
+    gap: 1.75rem;
   }
 
   .work-grid {
