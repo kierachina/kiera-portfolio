@@ -103,10 +103,23 @@ a {
   text-decoration: none;
 }
 
+.site-nav a span {
+  margin-left: 0.3rem;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 0.72;
+}
+
 .site-nav a:hover,
 .site-nav a.is-active {
   color: var(--ink);
   background: rgba(15, 118, 110, 0.1);
+}
+
+.site-nav a:hover span,
+.site-nav a.is-active span {
+  opacity: 1;
 }
 
 .hero {
@@ -237,9 +250,78 @@ a {
 .about-layout,
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 3rem;
   align-items: start;
+}
+
+.about-layout {
+  grid-template-columns: minmax(280px, 0.68fr) minmax(0, 1.32fr);
+}
+
+.contact-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.about-heading {
+  align-items: center;
+}
+
+.about-heading .section-kicker {
+  margin-bottom: 0.65rem;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.video-meta span {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--teal-dark);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+}
+
+.intro-video-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.intro-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 8px;
+  background: var(--ink);
+  object-fit: cover;
+}
+
+.intro-video-card figcaption {
+  margin: 0;
+  padding: 0.85rem 0.35rem 0.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.about-content {
+  display: grid;
+  gap: 1.4rem;
 }
 
 .section h2 {
@@ -1185,6 +1267,10 @@ a {
     gap: 1.75rem;
   }
 
+  .intro-video-card {
+    justify-self: center;
+  }
+
   .work-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1268,6 +1354,11 @@ a {
 
   .section-heading {
     align-items: start;
+    flex-direction: column;
+  }
+
+  .video-meta {
+    align-items: flex-start;
     flex-direction: column;
   }
 
